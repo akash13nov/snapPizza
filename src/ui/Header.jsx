@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import SearchOrder from "../features/order/SearchOrder";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SearchOrder from '../features/order/SearchOrder';
 
 const Header = () => {
   return (
-    <header>
+    <header className="bg-yellow-500">
       <Link to="/">SnapPizza Co.</Link>
       <SearchOrder />
       <p>Anu</p>
