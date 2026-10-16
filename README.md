@@ -18,4 +18,7 @@ Project URL : WIP
 
 # Features
 
--
+- add to cart
+- order pizza
+- get position
+- make priority pizza
