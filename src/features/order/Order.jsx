@@ -3,6 +3,7 @@ import { useFetcher, useLoaderData } from 'react-router-dom';
 import { getOrder } from '../../services/apiRestaurant';
 import { calcMinutesLeft, formatCurrency, formatDate } from '../../utils/helpers';
 import OrderItem from './OrderItem';
+import UpdateOrder from './UpdateOrder';
 
 function Order() {
   const order = useLoaderData();
@@ -15,7 +16,7 @@ function Order() {
     }
   }, [fetcher]);
 
-  console.log(fetcher);
+  //console.log(fetcher);
 
   const { id, status, priority, priorityPrice, orderPrice, estimatedDelivery, cart } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
@@ -62,6 +63,7 @@ function Order() {
         )}
         <p className="font-bold">To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}</p>
       </div>
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }
